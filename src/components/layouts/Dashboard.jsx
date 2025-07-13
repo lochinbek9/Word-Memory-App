@@ -1,8 +1,15 @@
-import React from 'react'
+import Stats from '../Stats.jsx'
+import CountDown from '../CountDown.jsx' 
+import History from '../History.jsx'
 
-function Dashboard() {
+function Dashboard(props) {
+  const name = props
   return (
-    <div>Dashboard</div>
+    <section id="dashboard" >
+      <Stats {...props} />
+      <CountDown />
+      <History />
+    </section>
   )
 }
 
