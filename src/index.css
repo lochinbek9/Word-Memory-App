@@ -225,7 +225,7 @@ section{
     background-color: var(--color-link) !important;
 }
 .incorrect{
-    background-color: oklch(.656 .241 .354.308) !important;
+    background-color: red !important;
 }
 /* FOOTER */
 

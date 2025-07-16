@@ -7,8 +7,8 @@ function Dashboard(props) {
   return (
     <section id="dashboard" >
       <Stats {...props} />
-      <CountDown />
-      <History />
+      <CountDown {...props} />
+      <History {...props}/>
     </section>
   )
 }

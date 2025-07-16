@@ -1,8 +1,12 @@
 
+import { calcLevel, calculateAccuracy, calculateNewWords } from '../utils/Index'
 import ProgressBar from './ProgressBar'
-function Stats() {
-  const name = "lodex"
-  const day = 16
+function Stats({name, day, attempts, PLAN}) {
+  // const name = "lodex"
+  const currLvl = calcLevel(day);
+  const flooredLvl = Math.floor(currLvl);
+  const remainder = (currLvl - flooredLvl) * 100;
+  
   return (
     <div className='card stats-card'>
       <div className="welcome-text">
@@ -18,15 +22,15 @@ function Stats() {
         </div>
         <div>
           <p>Words seen 🔥</p>
-          <h4>{101}</h4>
+          <h4>{calculateNewWords(day - 1)}</h4>
         </div>
         <div>
           <p>Accuarcy (%)</p>
-          <h4>{93.3.toFixed(2)}</h4>
+          <h4>{calculateAccuracy(attempts, day).toFixed(1)}</h4>
         </div>
       </div>
 
-      <ProgressBar />
+      <ProgressBar text={`lvl ${flooredLvl}`} remainder={remainder}/>
     </div>
   )
 }
